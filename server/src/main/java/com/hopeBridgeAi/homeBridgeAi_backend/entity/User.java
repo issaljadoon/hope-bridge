@@ -31,6 +31,9 @@ public class User {
     @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
+    @Column(nullable = false)
+    private long tokenVersion = 0L;
+
     public User() {
     }
 
@@ -86,4 +89,13 @@ public class User {
     public LocalDateTime getCreatedAt() {
         return createdAt;
     }
+
+    public long getTokenVersion() {
+        return tokenVersion;
+    }
+
+    public void setTokenVersion(long tokenVersion) {
+        this.tokenVersion = tokenVersion;
+    }
+
 }
